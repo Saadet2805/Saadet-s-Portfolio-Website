@@ -1,7 +1,15 @@
+/* Base styles */
 * {
     margin: 0;
     padding: 0;
-    font-family: Calibri;
+    font-family: Calibri, sans-serif;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri, sans-serif;
 }
 
 .home {
@@ -13,24 +21,28 @@
 
 nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin: auto;
-    padding: 10px 0 0 0;
+    padding: 10px 20px;
     background-color: rgb(109, 172, 240);
 }
 
 .logo {
     width: 100px;
     cursor: pointer;
-    display: block;
-    margin: 0% 45% 1% 7.5%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline-block;
-    list-style: none;
     margin: 10px 20px;
-    margin-top: 7%;
 }
 
 nav ul li a {
@@ -44,23 +56,22 @@ nav ul li a:hover {
 }
 
 .head {
-    margin-left: 8%;
-    margin-top: 10%;
+    margin: 5% 8%;
 }
 
 .head h1 {
-    font-size: 50px;
+    font-size: 2.5rem;
     color: rgb(62, 62, 73);
     margin-bottom: 20px;
 }
 
-span {
+.head span {
     color: rgb(109, 172, 240);
 }
 
 .head p, .about p, .projects p {
     color: rgb(62, 62, 73);
-    line-height: 22px;
+    line-height: 1.5;
 }
 
 .head a {
@@ -79,42 +90,27 @@ span {
 }
 
 .images {
-    width: 45%;
-    height: 80%;
-    position: absolute;
-    bottom: 50px;
-    right: 70px;
-}
-
-.images a{
-    position: absolute;
-    left: 80%;
-    bottom: 20%;
+    width: 100%;
+    height: auto;
+    position: relative;
 }
 
 .images img {
-    height: 95%;
-    position: absolute;
-    left: 65%;
-    bottom: 0;
-    transform: translateX(-60%);
-    transition: bottom 1s, left 1s;
-}
-
-.images:hover .profile {
-    left: 45%;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1s;
 }
 
 /* Styles specific to the about page */
 .about {
-    margin-left: 5%;
-    margin-top: 2%; 
-    margin-right: 5%;
+    margin: 2% 5%;
     color: rgb(62, 62, 73);
 }
 
 .about-container {
     margin-top: 2rem;
+    text-align: center;
 }
 
 .about-content {
@@ -123,39 +119,34 @@ span {
     padding: 20px;
     border-radius: 10px;
     margin: 0 auto;
-    width: 80%;
+    max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.about h2{
-   margin-left: 1%; 
+.about h2 {
+    margin: 1% 0;
 }
+
 .about p {
-    font-size: 18px;
-    line-height: 25px;
-    width: 90%;
-    margin-left: 3%;
-    margin-bottom: 5%;
-    margin-top: 1%;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 1% 3%;
 }
-.about li{
-    font-size: 18px;
-    line-height: 22px;
-    width: 90%;
-    margin-left: 6%;
-    padding-bottom: 1%;
+
+.about li {
+    font-size: 1rem;
+    line-height: 1.5;
     margin-left: 10%;
 }
 
 /* Styles specific to the projects page */
 .projects {
-    margin-left: 8%;
-    margin-top: 5%; /* Adjusted to move the heading higher */
+    margin: 5% 8%;
     color: rgb(62, 62, 73);
 }
 
 .projects h1 {
-    font-size: 50px;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
@@ -166,16 +157,17 @@ span {
 
 .project-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     border: 1px solid #ccc;
-    margin-bottom: 10px; /* Adjusted margin to make the boxes narrower */
+    margin-bottom: 10px;
     padding: 10px;
-    width: 90%; /* Adjusted width to make the boxes narrower */
+    width: 100%;
 }
 
 .project-item video {
-    margin-right: 20px;
-    width: 200px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .project-info h2 {
@@ -189,25 +181,24 @@ span {
 }
 
 /* Styles specific to the contact page */
-/* Add this to your existing CSS */
-
-/* Styles specific to the contact page */
 .contact {
-    padding: 0 5rem;
+    padding: 0 5%;
 }
 
 .contact-heading {
     margin-top: 20px;
+    text-align: center;
 }
 
 .contact-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 3rem 0;
-    justify-content: center;
 }
 
 .contact-form-container, .contact-details {
-    width: 50%;
+    width: 100%;
 }
 
 .details {
@@ -230,6 +221,7 @@ span {
 .contact-heading, .contact-text {
     margin: 0;
     color: rgb(62, 62, 73);
+    text-align: center;
 }
 
 .contact-text a {
@@ -247,19 +239,18 @@ span {
 
 /* Aligning contact details similar to My Projects */
 .contact-details {
-    margin-left: 8%;
-    margin-top: 10%;
+    margin: 10% 8%;
     color: rgb(62, 62, 73);
 }
 
 .contact-details h1 {
-    font-size: 50px;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .contact-details p {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .contact-details .details a {
@@ -271,10 +262,76 @@ span {
     text-decoration: underline;
 }
 
-
 .projects img {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     cursor: pointer;
     display: block;
-    margin-right: 10px;
+    margin: 10px auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .head {
+        margin: 10% 5%;
+    }
+
+    .head h1 {
+        font-size: 2rem;
+    }
+
+    .about, .projects, .contact {
+        margin: 5% 5%;
+    }
+
+    .about-container, .about-content, .project-item, .contact-details {
+        width: 100%;
+    }
+
+    .project-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 80px;
+    }
+
+    .head h1 {
+        font-size: 1.5rem;
+    }
+
+    .about-container, .about-content, .project-item, .contact-details {
+        width: 100%;
+    }
+
+    .about p, .about li, .project-info p, .contact-details p {
+        font-size: 0.875rem;
+    }
+
+    .contact-heading, .contact-text {
+        font-size: 0.875rem;
+    }
 }
